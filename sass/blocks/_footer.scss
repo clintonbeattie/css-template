@@ -1,0 +1,81 @@
+.main-footer {
+    position: relative;
+    padding: 44px 0;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    line-height: 1.98;
+    background-color: var(--blue-dark);
+    overflow: hidden;
+    .container {
+        position: relative;
+        &::before {
+            position: absolute;
+            left: -6px;
+            top: -52px;
+            content: url(/images/concentric-circles-grey-solid-top-right-cut.svg);
+            z-index: 0;
+            transform: scale(0.45);
+            transform-origin: left top;
+        }
+    }
+    h4 {
+        font-family: 'Inter', sans-serif;
+        color: #FFFFFF;
+    }
+    a {
+        font-weight: 400;
+        white-space: nowrap;
+    }
+    a:not([href^="mailto"]) {
+        color: var(--grey-light);
+    }
+    a[href^="mailto"] {
+        color: #FFFFFF;
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    nav a {
+        &:focus,
+        &:hover {
+            color: #FFFFFF;
+        }
+    }
+}
+.footer__links {
+    display: inline-flex;
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    li {
+        margin-right: 2rem;
+    }
+    a:not([href^="mailto"]) {
+        color: #FFFFFF;
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+@media (min-width: $screen-md) {
+    .main-footer {
+        padding: 94px 0;
+        line-height: 2.8;
+        .container::before {
+            left: 0;
+            top: -96px;
+            transform: scale(1);
+        }
+    }
+}
+@media (max-width: $screen-md) {
+    .footer__links {
+        flex-wrap: wrap;
+        li:first-child {
+            order: 1;
+            width: 100%;
+            padding-top: 15px;
+        }
+    }
+}

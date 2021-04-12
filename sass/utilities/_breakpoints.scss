@@ -1,0 +1,13 @@
+/*
+please ensure you add new
+breakpoint variables to $breakpoints so 
+CSS can generate utilities for each breakpoint
+*/
+$breakpoints: (
+    "": "",
+    "xs": $screen-xs,
+    "sm": $screen-sm,
+    "md": $screen-md,
+    "lg": $screen-lg,
+    "xl": $screen-xl
+);

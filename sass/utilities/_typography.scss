@@ -1,0 +1,213 @@
+@import url("http://fast.../fonts.net/t/1.css?apiType=css&projectid=46d527e8-65c0-4bfd-8889-e63d5cbc9737");
+@font-face{
+    font-family:"Bell Gothic Std W01 SemiBd";
+    src:url("/fonts/40d29211-0493-47e9-9b5f-0fb384ce4c20.woff2") format("woff2"),url("/fonts/8c0a89a1-c01e-423d-8c7d-6b2688ffe0a1.woff") format("woff");
+}
+@font-face{
+    font-family:"Bell Gothic Std W01 Bold";
+    src:url("/fonts/55dbcb31-8d22-4dc9-ad85-3935003dc0ac.woff2") format("woff2"),url("/fonts/08dffa4e-56de-4cb2-a543-e99f90a915f0.woff") format("woff");
+}
+@font-face{
+    font-family:"Century Schoolbook W01";
+    src:url("/fonts/82febba5-0ee8-4dfa-9d12-69954d7e4ff3.woff2") format("woff2"),url("/fonts/3a5e1390-7cce-4a9b-bb4a-340024804c37.woff") format("woff");
+}
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: var(--ff-century);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--grey-medium);
+    line-height: 1.8;
+    @media (min-width: $screen-md) {
+        font-size: 1.8rem;
+    }
+}
+p {
+    margin-bottom: 2.4rem;
+}
+strong {
+    font-weight: 700;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-bell-bold);
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+}
+h1 {
+    margin-bottom: 2.5rem;
+    font-size: 4.4rem;
+    line-height: 1.1;
+    @media (min-width: $screen-md) {
+        font-size: 4.8rem;
+    }
+    @media (min-width: $screen-xl + 200) {
+        font-size: 7.4rem;
+    }
+}
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    @media (min-width: $screen-md) {
+        font-size: 3.8rem;
+    }
+    @media (min-width: $screen-xl) {
+        font-size: 4.8rem;
+    }
+}
+h3 {
+    margin-bottom: 0.5em;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    @media (min-width: $screen-md) {
+        font-size: 3.6rem;
+    }
+}
+h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    @media (min-width: $screen-md) {
+        margin-bottom: 3rem;
+    }
+}
+//
+//  Subtitles
+//  _____________________________________________
+.subtitle {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--brand-primary);
+    @media (min-width: $screen-md) {
+        font-size: 1.6rem;
+    }
+}
+//
+//  Font Family
+//  _____________________________________________
+.ff-bell-bold {
+    font-family: var(--ff-bell-bold);
+}
+.ff-bell-black {
+    font-family: var(--ff-bell-black);
+}
+.ff-century {
+    font-family: var(--ff-century);
+}
+//
+//  Font Colour
+//  _____________________________________________
+.fc-white {
+    color: #FFFFFF;
+}
+.fc-brand-primary {
+    color: var(--brand-primary);
+}
+.fc-grey-light {
+    color: var(--grey-light);
+}
+//
+//  Text Transform
+//  _____________________________________________
+.tt-none {
+    text-transform: none !important;
+    letter-spacing: 0;
+}
+.tt-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+}
+//
+//  Font Sizes
+//  _____________________________________________
+.fs-10 {
+    font-size: 1rem;
+}
+.fs-12 {
+    font-size: 1.2rem;
+}
+.fs-13 {
+    font-size: 1.3rem;
+}
+.fs-16 {
+    font-size: 1.6rem;
+}
+.fs-17 {
+    font-size: 1.7rem;
+}
+.fs-18 {
+    font-size: 1.8rem;
+}
+.fs-19 {
+    font-size: 1.9rem;
+    &.btn {
+        font-size: 1.9rem;
+    }
+}
+.fs-22 {
+    font-size: 2.2rem;
+}
+.fs-24 {
+    font-size: 2.4rem;
+}
+.fs-40 {
+    font-size: 4rem;
+}
+@media (min-width: $screen-md) {
+    .fs-md-13 {
+        font-size: 1.4rem;
+    }
+    .fs-md-14 {
+        font-size: 1.4rem;
+    }
+    .fs-md-16 {
+        font-size: 1.6rem;
+    }
+    .fs-md-18 {
+        font-size: 1.8rem;
+    }
+    .fs-md-19 {
+        font-size: 1.9rem;
+        &.btn {
+            font-size: 1.9rem;
+        }
+    }
+    .fs-md-20 {
+        font-size: 2rem;
+    }
+    .fs-md-22 {
+        font-size: 2.2rem;
+    }
+    .fs-md-24 {
+        font-size: 2.4rem;
+    }
+    .fs-md-30 {
+        font-size: 3rem;
+    }
+    .fs-md-31 {
+        font-size: 3.1rem;
+    }
+    .fs-md-40 {
+        font-size: 4rem;
+    }
+    .fs-md-48 {
+        font-size: 4.8rem;
+    }
+    .fs-md-55 {
+        font-size: 5.5rem;
+    }
+}

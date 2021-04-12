@@ -1,0 +1,322 @@
+.visuallyhidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px; padding: 0; border: 0;
+}
+.hide {
+    display: none;
+}
+//
+// Border Radius
+//  _____________________________________________
+.border-radius-3 {
+    border-radius: 3px;
+}
+//
+//  Position
+//  _____________________________________________
+.relative {
+    position: relative;
+}
+//
+//  Z-Index
+//  _____________________________________________
+.zi-1 {
+    z-index: 1;
+}
+//
+//  Background Colours
+//  _____________________________________________
+.bg-white {
+    background-color: #FFFFFF;
+}
+.bg-brand-primary {
+    background-color: var(--brand-primary);
+}
+.bg-brand-secondary {
+    background-color: var(--brand-secondary);
+}
+.bg-blue-dark {
+    background-color: var(--blue-dark);
+    h1,
+    h2 {
+        color: #FFFFFF;
+    }
+    p {
+        color: var(--grey-light);
+    }
+}
+.bg-blue-medium-dark {
+    background-color: var(--blue-medium-dark);
+    color: #FFFFFF;
+}
+.bg-blue-medium-dark-half {
+    background: linear-gradient(to bottom, white 50%, var(--blue-medium-dark) 50%);
+}
+.bg-orange-primary-half {
+    background: linear-gradient(to bottom, white 50%, var(--brand-primary) 50%);
+}
+.bg-brand-secondary-bottom-bar {
+    background: linear-gradient(to bottom, white 84%, var(--brand-secondary) 16%);
+    @media (min-width: $screen-md) {
+        background: linear-gradient(to bottom, white 80%, var(--brand-secondary) 20%);
+    }
+}
+//
+// Limited width blocks
+//  _____________________________________________
+.limit-width {
+    margin-left: auto;
+    margin-right: auto;
+    &--padded {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    &--left {
+        margin-left: 0;
+    }
+}
+.limit-width-xs {
+    @extend .limit-width;
+    max-width: 430px;
+}
+.limit-width-xs-sm {
+    @extend .limit-width;
+    max-width: 700px;
+}
+.limit-width-sm {
+    @extend .limit-width;
+    max-width: 810px;
+}
+.limit-width-md {
+    @extend .limit-width;
+    max-width: 930px;
+}
+.limit-width-md-lg {
+    @extend .limit-width;
+    max-width: 1030px;
+}
+.limit-width-lg {
+    @extend .limit-width;
+    max-width: 1240px;
+}
+.limit-width-xl {
+    @extend .limit-width;
+    max-width: 1370px;
+}
+//
+//  Show/Hide
+//  _____________________________________________
+.hide-lt-sm {
+    @media (max-width: $screen-sm) {
+        display: none !important;
+    }
+}
+.hide-lt-md {
+    @media (max-width: $screen-md) {
+        display: none !important;
+    }
+}
+.hide-gt-md {
+    @media (min-width: $screen-md) {
+        display: none !important;
+    }
+}
+.hide-gt-lg {
+    @media (min-width: $screen-lg) {
+        display: none !important;
+    }
+}
+//
+// Text Align Center
+//  _____________________________________________
+.text-center {
+    text-align: center;
+}
+.text-center-sm {
+    @media (min-width: $screen-sm) {
+        text-align: center;
+    }
+}
+.text-center-md {
+    @media (min-width: $screen-md) {
+        text-align: center;
+    }
+}
+//
+// Text Align Left
+//  _____________________________________________
+.text-left {
+    text-align: left;
+}
+.text-left-sm {
+    @media (min-width: $screen-sm) {
+        text-align: left;
+    }
+}
+.text-left-md {
+    @media (min-width: $screen-md) {
+        text-align: left;
+    }
+}
+//
+// Text Align Right
+//  _____________________________________________
+.text-right {
+    text-align: right;
+}
+.text-right-sm {
+    @media (min-width: $screen-sm) {
+        text-align: right;
+    }
+}
+.text-right-md {
+    @media (min-width: $screen-md) {
+        text-align: right;
+    }
+}
+//
+//  Bullet List
+//  _____________________________________________
+.bullet-list {
+    ul {
+        margin-bottom: 1.1em;
+    }
+    li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        &::before {
+            display: block;
+            height: 6px;
+            line-height: 6px;
+            content: '\2022';
+            margin: 10px 10px 0 0;
+            font-size: 2.2rem;
+            color: var(--blue-dark);
+        }
+    }
+}
+//
+//  Icon List
+//  _____________________________________________
+.icon-list {
+    li {
+        display: flex;
+        line-height: 1.5;
+        span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+    }
+}
+.icon-list--membership {
+    li {
+        margin-bottom: 28px;
+        span {
+            width: 41px;
+            height: 41px;
+            margin-right: 16px;
+        }
+        svg {
+            max-height: 41px;
+            g {
+                fill: #FFFFFF;
+            }
+        }
+    }
+}
+//
+//  Grid Helpers
+//  _____________________________________________
+@media (min-width: $screen-md) {
+    .direction-md-row {
+        flex-direction: row;
+    }
+    .no-wrap-md {
+        flex-wrap: nowrap;
+    }
+}
+@media (max-width: $screen-md) {
+    .bleed-lt-md {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0;
+    }
+    .col-bleed-lt-md {
+        padding: 0;
+    }
+}
+//
+//  Pointer
+//  _____________________________________________
+.cursor-pointer {
+    cursor: pointer;
+}
+//
+//  Other Helpers
+//  _____________________________________________
+.block {
+    display: block;
+}
+.inline-block {
+    display: inline-block;
+}
+.nooverflow {
+    overflow: hidden;
+}
+//
+//  Widths
+//  _____________________________________________
+@media (max-width: $screen-md) {
+    .lt-md-full-width {
+        width: calc(100% + 60px);
+        margin-left: -30px;
+        margin-right: -30px;
+    }
+}
+@media (max-width: $screen-sm) {
+    .lt-sm-full-width {
+        width: 100%;
+    }
+}
+//
+//  Max Widths
+//  _____________________________________________
+.mw-450 {
+    max-width: 45rem;
+}
+.mw-570 {
+    max-width: 57rem;
+}
+.object-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+//
+//  Other
+//  _____________________________________________
+.link-style {
+    a {
+        color: var(--brand-primary);
+        text-decoration: underline;
+        &:focus,
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+//
+//  Grid Helper
+//  _____________________________________________
+@media (min-width: $screen-md) {
+    .col-md-auto {
+        flex: 0 2 210px;
+        width: auto;
+    }
+}

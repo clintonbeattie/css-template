@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    position: relative;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    &.ns {
+        left: 0;
+        -webkit-overflow-scrolling: touch;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+}
+a {
+    text-decoration: none;
+    color: var(--grey-medium);
+}
+li {
+    list-style-type: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+//
+//  Container
+//  _____________________________________________
+.container {
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    
+}

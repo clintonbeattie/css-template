@@ -1,0 +1,411 @@
+//
+//  Resets
+//  _____________________________________________
+input:focus, 
+textarea:focus, 
+select:focus{
+    outline: none;
+}
+fieldset {
+    border: 0;
+    padding: 0;
+}
+input[type=text],
+input[type=search],
+input[type=email],
+input[type=password] {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    font-weight: 300;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    appearance: none;
+    &.error {
+      border-color: var(--red);
+      box-shadow: 0 0 0 1px var(--red);
+    }
+    &.rounded-height-50 {
+        height: 50px;
+        border-radius: 25px;
+    }
+    &:focus {
+        border-color: var(--blue-dark);
+    }
+    @media (min-width: $screen-md) {
+        &.rounded-height-md-60 {
+            height: 60px;
+            border-radius: 30px;
+        }
+    }
+}
+textarea {
+    width: 100%;
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    &:focus {
+        border-color: var(--blue-dark);
+    }
+}
+input[type=submit] {
+    padding: 1.9rem 6rem;
+}
+.form-group {
+    margin-bottom: 18px;
+}
+.form-group--checkbox {
+    display: flex;
+    max-width: 500px;
+    label {
+        font-weight: 300;
+        font-size: 1.1rem;
+        text-transform: none;
+        color: var(--grey-medium);
+    }
+    input {
+        flex-shrink: 0;
+        order: -1;
+        margin-right: 12px;
+    }
+}
+.form-group--radio-right {
+    display: flex;
+    margin-bottom: 10px;
+    label {
+        max-width: 256px;
+        padding-right: 15px;
+    }
+    input {
+        flex-shrink: 0;
+    }
+}
+//
+//  Checkbox left aligned
+//  _____________________________________________
+.checkbox-left {
+    display: flex;
+    margin-bottom: 20px;
+    label {
+      padding-top: 2px;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: var(--grey-medium);
+      text-transform: none;
+      letter-spacing: normal;
+    }
+}
+//
+//  Radio/Checkbox styling
+//  _____________________________________________
+.field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+[type=radio],
+[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+[type=radio],
+[type=checkbox] {
+    width: 24px;
+    height: 24px;
+    border: solid 1px var(--border-color);
+    margin-right: 8px;
+    position: relative;
+    background-color: #FFFFFF;
+    &.mr-0 {
+        margin-right: 0;
+    }
+}
+[type=checkbox] {
+    border-radius: 2px;
+}
+[type=radio]:checked::before,
+[type=checkbox]:checked::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-color: var(--blue-dark);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+[type=checkbox]:checked::before {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check.svg") no-repeat center center;
+}
+// [type=radio]:focus,
+// [type=checkbox]:focus {
+//     box-shadow: 0 0 0 3px var(--blue-dark);  
+//     outline: 3px solid transparent; /* For Windows high contrast mode. */
+// }
+[type=radio],
+[type=radio]:checked::before {
+    border-radius: 100%;
+}
+
+label,
+.faux-label {
+    display: block;
+    width: 100%;
+    margin-bottom: 3px;
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    color: var(--blue-dark);
+}
+
+button {
+    &:focus {
+        outline: 0;
+    }
+}
+.expiry-fields {
+    display: flex;
+}
+//
+//  Contact Form
+//  _____________________________________________
+.contact-form {
+    position: relative;
+    z-index: 1;
+    input[type=text],
+    input[type=email],
+    textarea {
+        background-color: var(--grey-very-light);
+    }
+}
+//
+//  Legend
+//  _____________________________________________
+legend {
+    margin-bottom: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--blue-dark);
+    font-size: 2.8rem;
+}
+@media (min-width: $screen-md) {
+    legend {
+        margin-bottom: 2rem;
+        font-size: 3.6rem;
+    }
+}
+//
+//  Form Row
+//  _____________________________________________
+.form-row {
+    margin-bottom: 2rem;
+}
+.form-row__col {
+    margin-bottom: 2rem;
+}
+@media (min-width: $screen-md) {
+    .form-row--cols {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .form-row__col {
+        flex: 50%;
+        margin: 0;
+        padding: 0 10px;
+    }
+}
+//
+//  Select
+//  _____________________________________________
+select {
+    display: block;
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    font-weight: 300;
+    color: #9D9D9D;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    appearance: none;
+    background-color: #FFFFFF;
+    background-image: url(/images/icon-select-arrow-dark-grey.svg);
+    background-repeat: no-repeat, repeat;
+    background-position: right 20px top 50%, 0 0;
+}
+/* Hide arrow icon in IE browsers */
+.select-css::-ms-expand {
+    display: none;
+}
+
+/* Hover style */
+.select-css:hover {
+    border-color: #888;
+}
+
+/* Focus style */
+.select-css:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+
+/* Set options to normal weight */
+.select-css option {
+    font-weight: normal;
+}
+
+/* Support for rtl text, explicit support for Arabic and Hebrew */
+*[dir="rtl"] .select-css,
+:root:lang(ar) .select-css,
+:root:lang(iw) .select-css {
+    background-position: left .7em top 50%, 0 0;
+    padding: .6em .8em .5em 1.4em;
+}
+
+/* Disabled styles */
+.select-css:disabled,
+.select-css[aria-disabled=true] {
+    color: graytext;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+}
+
+.select-css:disabled:hover,
+.select-css[aria-disabled=true] {
+    border-color: #aaa;
+}
+//
+//  Search Field
+//  _____________________________________________
+input[type=search].search {
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #979797;
+    background-color: transparent;
+    @media (min-width: $screen-md) {
+        font-size: 3rem;
+        height: 94px;
+        line-height: 94px;
+    }
+}
+//
+//  Mailchimp
+//  _____________________________________________
+#mc_embed_signup {
+    input[type=email] {
+        margin-bottom: 1.2rem;
+        border: 2px solid #FFFFFF;
+        border-radius: 4em;
+    }
+}
+#mc_embed_signup_scroll {
+    display: flex;
+    flex-direction: column;
+}
+.mc_embed_field {
+    position: relative;
+}
+div.mce_inline_error,
+div#mce-error-response {
+    margin: 0 !important;
+    padding: 0.5rem 2.2rem !important;
+    background-color: transparent !important;
+    font-weight: 700;
+    z-index: 1;
+    font-size: 1.6rem;
+    color: var(--red) !important;
+}
+input.mce_inline_error {
+    border-color: var(--red) !important;
+    background-color: #FFF1F1;
+}
+@media (min-width: $screen-md) {
+    #mc_embed_signup {
+        input[type=email] {
+            margin-bottom: 0;
+        }
+    }
+    #mc_embed_signup_scroll {
+        flex-direction: row;
+    }
+    .mc_embed_field {
+        flex-grow: 1;
+        padding-right: 2rem;
+    }
+    div.mce_inline_error {
+        position: absolute;
+        left: 0;
+        bottom: -4rem;
+    }
+}
+// Placeholder
+//  _____________________________________________
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--grey-medium);
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--grey-medium);
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--grey-medium);
+}
+//
+//  Remove Search input icon
+//  _____________________________________________
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type=search]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+}
+//
+//  Errors
+//  _____________________________________________
+ul.errors {
+    // border-color: var(--red) !important;
+    // background-color: #FFF1F1;
+    li {
+        padding-top: 4px;
+        padding-left: 20px;
+        font-size: 1.6rem;
+        color: var(--red) !important;
+    }
+}

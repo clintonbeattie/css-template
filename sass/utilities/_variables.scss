@@ -1,0 +1,37 @@
+//
+//  Screen Width
+//  _____________________________________________
+$screen-xs: 320px !default;
+$screen-sm: 480px !default;
+$screen-md: 767px !default;
+$screen-lg: 1023px !default;
+$screen-xl: 1400px !default;
+
+:root {
+    // Website width
+    --site-width: 192rem;
+    // Content width
+    --content-width: 171rem;
+
+    //
+    //  Fonts
+    //  _____________________________________________
+    --ff-bell-bold: "Bell Gothic Std W01 SemiBd", sans-serif;
+    --ff-bell-black: "Bell Gothic Std W01 Bold", sans-serif;
+    --ff-century: "Century Schoolbook W01", serif;
+
+    //
+    //  Colours
+    //  _____________________________________________
+    --brand-primary: #EA701B;
+    --brand-secondary: #FBEFE7;
+    --grey-very-light: #FAFAFA;
+    --grey-light: #F8F8F8;
+    --grey-medium: #666666;
+    --grey-medium-dark: #252525;
+    --grey-dark: #111111;
+    --blue-medium-dark: #1A2628;
+    --red: #C81A1A;
+    --green: #4AA50D;
+    --border-color: #E0E0E0;
+}

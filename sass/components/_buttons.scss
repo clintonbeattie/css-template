@@ -1,0 +1,44 @@
+.btn {
+    display: inline-block;
+    padding: 1.4rem 5.2rem;
+    border: 2px solid transparent;
+    border-radius: 4em;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color ease-in-out 0.05s;
+    white-space: nowrap;
+    appearance: none;
+    cursor: pointer;
+    user-select: none;
+    &--brand-primary {
+        color: #FFFFFF;
+        border-color: var(--brand-primary);
+        background-color: var(--brand-primary);
+        &:focus,
+        &:hover {
+            border-color: var(--brand-primary-light);
+            background-color: var(--brand-primary-light);
+        }
+    }
+    &--hollow-orange-border {
+        color: #FFFFFF;
+        border-color: var(--brand-primary);
+        &:focus,
+        &:hover {
+            border-color: var(--brand-primary);
+            background-color: var(--brand-primary);
+        }
+    }
+    &--blue-dark {
+        color: #FFFFFF;
+        border-color: var(--blue-dark);
+        background-color: var(--blue-dark);
+        &:focus,
+        &:hover {
+            border-color: #202E2F;
+            background-color: #202E2F;
+        }
+    }
+}

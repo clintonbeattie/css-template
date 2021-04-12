@@ -1,0 +1,227 @@
+// --------------------------------------------------
+// reflex containers
+// --------------------------------------------------
+
+.#{$reflex-prefix}container,
+.#{$reflex-prefix}container-full {
+    @include box-sizing(border-box);
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: (0.7rem * 2);
+    padding-left: (0.7rem * 2);
+    @media (min-width: $screen-md) {
+        padding-right: (1.5rem * 2);
+        padding-left: (1.5rem * 2);
+    }
+    .#{$reflex-prefix}grid {
+        margin-right: -0.7rem;
+        margin-left: -0.7rem;
+        @media (min-width: $screen-md) {
+            margin-right: -1.5rem;
+            margin-left: -1.5rem;
+        }
+    }
+}
+
+.#{$reflex-prefix}container {
+    @media (min-width: $reflex-xs) {
+        max-width: $reflex-xs;
+    }
+
+    @media (min-width: $reflex-sm) {
+        max-width: $reflex-sm;
+    }
+
+    @media (min-width: $reflex-md) {
+        max-width: $reflex-md;
+    }
+
+    @media (min-width: $reflex-lg) {
+        max-width: $reflex-lg;
+    }
+
+    @media (min-width: $reflex-xl) {
+        max-width: $reflex-xl;
+    }
+}
+
+// --------------------------------------------------
+// reflex grid
+// --------------------------------------------------
+
+.#{$reflex-prefix}grid {
+    @include box-sizing(border-box);
+    display: block;
+    @include display-flex();
+    @include flex-wrap();
+    padding: 0;
+    margin-left: -0.7rem;
+    margin-right: -0.7rem;
+    position: static;
+
+    @media (min-width: $screen-md) {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+    }
+    &::before,
+    &::after {
+        @include box-sizing(border-box);
+        @include reset-whitespace();
+    }
+
+    // handle when lists are used as a grid
+    list-style-type: none;
+}
+
+// --------------------------------------------------
+// reflex col defaults
+// --------------------------------------------------
+
+[class*="#{$reflex-prefix}col-"] {
+    @include box-sizing(border-box);
+    @include reset-whitespace();
+    position: relative;
+    width: 100%;
+    vertical-align: top;
+    padding: 0 0.7rem;
+    @media (min-width: $screen-md) {
+        padding: 0 1.5rem;
+    }
+    &::before,
+    &::after {
+        @include box-sizing(border-box);
+        @include reset-whitespace();
+    }
+
+    // handle grids nested in columns
+    .#{$reflex-prefix}grid {
+        @include flex(1, 1, auto);
+        margin: -0.7rem;
+        @media (min-width: $screen-md) {
+            margin: -1.2rem;
+        }
+    }
+
+    @if $legacy-support == true {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+    }
+}
+
+// --------------------------------------------------
+// reflex grid generation
+// --------------------------------------------------
+
+@include make-reflex-grid(col-);
+
+@media (min-width: $reflex-xs) {
+    @include make-reflex-grid(col-xs-);
+}
+
+@media (min-width: $reflex-sm) {
+    @include make-reflex-grid(col-sm-);
+}
+
+@media (min-width: $reflex-md) {
+    @include make-reflex-grid(col-md-);
+}
+
+@media (min-width: $reflex-lg) {
+    @include make-reflex-grid(col-lg-);
+}
+
+@media (min-width: $reflex-xl) {
+    @include make-reflex-grid(col-xl-);
+}
+
+// --------------------------------------------------
+// reflex col-auto
+// --------------------------------------------------
+
+.#{$reflex-prefix}col-auto {
+    @include setup-auto-cols();
+}
+
+@media (min-width: $reflex-xs) {
+    .#{$reflex-prefix}col-xs-auto {
+        @include setup-auto-cols();
+    }
+}
+
+@media (min-width: $reflex-sm) {
+    .#{$reflex-prefix}col-sm-auto {
+        @include setup-auto-cols();
+    }
+}
+
+@media (min-width: $reflex-md) {
+    .#{$reflex-prefix}col-md-auto {
+        @include setup-auto-cols();
+    }
+}
+
+@media (min-width: $reflex-lg) {
+    .#{$reflex-prefix}col-lg-auto {
+        @include setup-auto-cols();
+    }
+}
+
+@media (min-width: $reflex-xl) {
+    .#{$reflex-prefix}col-xl-auto {
+        @include setup-auto-cols();
+    }
+}
+
+// --------------------------------------------------
+// reflex order helpers generation
+// --------------------------------------------------
+
+@include make-order-helpers();
+
+@media only screen and (min-width: $reflex-xs) {
+    @include loop-order-helpers($reflex-columns, '-xs');
+}
+
+@media only screen and (min-width: $reflex-sm) {
+    @include loop-order-helpers($reflex-columns, '-sm');
+}
+
+@media only screen and (min-width: $reflex-md) {
+    @include loop-order-helpers($reflex-columns, '-md');
+}
+
+@media only screen and (min-width: $reflex-lg) {
+    @include loop-order-helpers($reflex-columns, '-lg');
+}
+
+@media only screen and (min-width: $reflex-xl) {
+    @include loop-order-helpers($reflex-columns, '-xl');
+}
+
+// --------------------------------------------------
+// reflex offset helpers generation
+// --------------------------------------------------
+
+@include make-offset-helpers();
+
+@media only screen and (min-width: $reflex-xs) {
+    @include loop-offset-helpers($reflex-columns - 1, '-xs');
+}
+
+@media only screen and (min-width: $reflex-sm) {
+    @include loop-offset-helpers($reflex-columns - 1, '-sm');
+}
+
+@media only screen and (min-width: $reflex-md) {
+    @include loop-offset-helpers($reflex-columns - 1, '-md');
+}
+
+@media only screen and (min-width: $reflex-lg) {
+    @include loop-offset-helpers($reflex-columns - 1, '-lg');
+}
+
+@media only screen and (min-width: $reflex-xl) {
+    @include loop-offset-helpers($reflex-columns - 1, '-xl');
+}

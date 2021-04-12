@@ -1,0 +1,118 @@
+/*
+need more or less space utilities?
+Add your desired space value to $spaces
+and Wee CSS generates a range of utilities
+at your $breakpoints for that space value!
+You can always use PurgeCSS to remove
+unused utility classes!
+*/
+
+$spaces: (
+  0,
+  2,
+  5,
+  10,
+  15,
+  20,
+  25,
+  30,
+  35,
+  37,
+  40,
+  45,
+  50,
+  55,
+  60,
+  65,
+  70,
+  75,
+  80,
+  85,
+  90,
+  95,
+  100,
+  105,
+  110,
+  115,
+  120,
+  125,
+  130,
+  135,
+  140,
+  145,
+  150,
+  205,
+  255
+);
+
+$sides: (top, bottom, left, right);
+
+@each $breakpointName, $breakpointValue in $breakpoints {
+  @if $breakpointName != "" {
+    @media (min-width: $breakpointValue) {
+      @each $space in $spaces {
+        @each $side in $sides {
+          .m#{str-slice($side, 0, 1)}-#{$breakpointName}-#{$space} {
+            margin-#{$side}: #{$space}px;
+          }
+          .p#{str-slice($side, 0, 1)}-#{$breakpointName}-#{$space} {
+            padding-#{$side}: #{$space}px;
+          }
+          @if $space != "0" {
+            .m#{str-slice($side, 0, 1)}-#{$breakpointName}-n#{$space} {
+              margin-#{$side}: -#{$space}px;
+            }
+          }
+        }
+        .mx-#{$breakpointName}-#{$space} {
+          margin-left: #{$space}px;
+          margin-right: #{$space}px;
+        }
+        .my-#{$breakpointName}-#{$space} {
+          margin-bottom: #{$space}px;
+          margin-top: #{$space}px;
+        }
+        .px-#{$breakpointName}-#{$space} {
+          padding-left: #{$space}px;
+          padding-right: #{$space}px;
+        }
+        .py-#{$breakpointName}-#{$space} {
+          padding-bottom: #{$space}px;
+          padding-top: #{$space}px;
+        }
+      }
+    }
+  } @else {
+    @each $space in $spaces {
+      @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}-#{$space} {
+          margin-#{$side}: #{$space}px;
+        }
+        .p#{str-slice($side, 0, 1)}-#{$space} {
+          padding-#{$side}: #{$space}px;
+        }
+        @if $space != "0" {
+          .m#{str-slice($side, 0, 1)}-n#{$space} {
+            margin-#{$side}: -#{$space}px;
+          }
+        }
+      }
+      .mx-#{$space} {
+        margin-left: #{$space}px;
+        margin-right: #{$space}px;
+      }
+      .my-#{$space} {
+        margin-bottom: #{$space}px;
+        margin-top: #{$space}px;
+      }
+      .px-#{$space} {
+        padding-left: #{$space}px;
+        padding-right: #{$space}px;
+      }
+      .py-#{$space} {
+        padding-bottom: #{$space}px;
+        padding-top: #{$space}px;
+      }
+    }
+  }
+}

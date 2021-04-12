@@ -1,0 +1,8 @@
+.breadcrumb ul {
+    display: flex;
+}
+    
+.breadcrumb li:not(:first-child)::before {
+    content: "→";
+    margin: 0 0.6rem;
+}
