@@ -10,22 +10,18 @@
 @import 'utilities/spacing';
 
 //
-//  Blocks
+//  Layout
 //  _____________________________________________
-@import 'blocks/header';
-@import 'blocks/footer';
-@import 'blocks/breadcrumbs';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/breadcrumbs';
+@import 'layout/forms';
 
 //
 //  Components
 //  _____________________________________________
 @import 'components/buttons';
 @import 'components/hamburger';
-
-//
-//  Modules
-//  _____________________________________________
-@import 'modules/forms';
 
 //
 //  Other
